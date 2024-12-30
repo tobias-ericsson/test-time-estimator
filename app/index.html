@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Minimal Page</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <h1>Average Pull request test time for company X</h1>
+        <!-- Editable Text -->
+        <p>
+            What if company X had
+            <span id="employees" class="editable" contenteditable="true"
+                >10</span
+            >
+            productive developers, developing new features, often using TDD,
+            working on the same codebase, but they dont have time to refactor
+            and remove or clean up old code and tests? How long would they have
+            to wait for a pull request job to finish it's test-suite?
+        </p>
+        <p>
+            Lets say that on average, each developer makes
+            <span
+                id="weeklyPullRequests"
+                class="editable"
+                contenteditable="true"
+                >2</span
+            >
+            pull-requests per work-week (5 days).
+        </p>
+        <p>
+            For every two pull-requests, one quick unit-test is added. Every
+            fifth pull-request adds a slower medium-running test, and every
+            hundred pull-request adds a very slow long-running test.
+        </p>
+        <p>
+            On average, quick unit-tests take
+            <span id="shortTestTime" class="editable" contenteditable="true"
+                >100</span
+            >
+            milliseconds to complete. Slower "docker test-container" tests take
+            <span id="mediumTestTime" class="editable" contenteditable="true"
+                >10</span
+            >
+            seconds, while slow integration-tests take
+            <span id="longTestTime" class="editable" contenteditable="true"
+                >60</span
+            >
+            minutes.
+        </p>
+        <p>
+            The simulation will cover a span of
+            <span id="days" class="editable" contenteditable="true">500</span>
+            days (there are around 250 working days in a year).
+        </p>
+
+        <button id="updateGraph">Update Graph</button>
+
+        <canvas id="testTimeChart" width="800" height="400"></canvas>
+
+        <!-- Table for Results -->
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody id="resultsTableBody">
+                <!-- Rows will be dynamically populated -->
+            </tbody>
+        </table>
+
+        <script src="script.js"></script>
+    </body>
+</html>
